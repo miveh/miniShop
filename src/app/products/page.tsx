@@ -1,5 +1,7 @@
 import ProductPage from "@/features/product/ProductPage";
 
-export default function Home() {
+function Page() {
   return <ProductPage />;
 }
+
+export default Page;
