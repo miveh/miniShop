@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🛒 OOP Shopping Cart Project
+A robust E-commerce shopping cart implementation using TypeScript, Next(App router), and Object-Oriented Programming (OOP) principles.
 
-## Getting Started
+🚀 Getting Started
+This project uses Yarn as the package manager. Follow these steps to run the project locally.
 
-First, run the development server:
+Prerequisites
+Ensure you have Node.js installed on your machine.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+````Installation
+Clone the repository:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> > git clone https://github.com/your-username/your-repo-name.git
+> > cd your-repo-name```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Install dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```> > yarn install```
 
-## Learn More
+Running the App
+Start the development server:
 
-To learn more about Next.js, take a look at the following resources:
+```> > yarn dev```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# or, depending on your setup:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+yarn start
+Open http://localhost:3000 to view it in the browser.
 
-## Deploy on Vercel
+Building for Production
+To create a production-ready build:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```> > yarn build```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Domain Layer (OOP):
+Classes (Cart, CartItem) handle the "rules" of the application.
+They use efficient data structures (Map) for performance.
+
+UI Layer (React): MUI
+State Management: RTK
+📚 Class Documentation
+
+1. Product
+   A data transfer object (DTO) representing a product available in the store.
+
+Purpose: Holds static information about items fetched from the API/Database.
+Fields: id, title, price, description, category, image. 2. CartItem
+Represents a single line item inside the shopping cart.
+
+Purpose: Manages the specific quantity and subtotal of a specific product. 3. Cart
+The main manager class acting as the "Single Source of Truth" for the shopping session.
+
+Data Structure: Uses a Map<number, CartItem> instead of an Array. This allows for O(1) (instant) lookups when checking if an item already exists, rather than looping through an array.
+🛠 Technologies
+Language: TypeScript
+Framework: Next
+State Management: (Redux Toolkit / Context API - Edit based on your usage)
+Package Manager: Yarn
+Styling: (MUI / Tailwind / CSS - Edit based on your usage)
+````
